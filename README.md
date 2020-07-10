@@ -1,4 +1,4 @@
-# jamstack-demo
+# nuxt-microcms
 
 ## Build Setup
 

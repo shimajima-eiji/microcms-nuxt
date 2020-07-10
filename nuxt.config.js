@@ -2,7 +2,6 @@ require( "dotenv" ).config();
 const { ENDPOINT } = process.env;
 const { CONTENTS_ID } = process.env;
 const { API_KEY } = process.env;
-const axios = require( "axios" );
 
 export default {
   /*
@@ -69,31 +68,9 @@ export default {
   */
   build: {
   },
-
   env: {
     ENDPOINT,
     CONTENTS_ID,
     API_KEY
-  },
-  //追加
-  generate: {
-    routes ()
-    {
-      const careers = axios
-        .get( process.env.ENDPOINT, {
-          headers: { "X-API-KEY": process.env.API_KEY }
-        } )
-        .then( res =>
-        {
-          return res.data.contents.map( career =>
-          {
-            return "/" + process.env.CONTENTS_ID + "/" + career.id;
-          } );
-        } );
-      return Promise.all( [ careers, posts ] ).then( values =>
-      {
-        return values.join().split( "," );
-      } );
-    }
-  },
+  }
 }
