@@ -75,7 +75,6 @@ export default {
     CONTENTS_ID,
     API_KEY
   },
-  /*
   generate: {
     routes ()
     {
@@ -94,5 +93,4 @@ export default {
         } )
     }
   }
-  */
 }
