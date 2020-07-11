@@ -6,6 +6,7 @@
 </template>
 
 <script>
+/*
 export default {
   // store
   // computed: {
@@ -23,4 +24,5 @@ export default {
     // console.log(store.state.daily.ApiFlag)
   }
 }
+*/
 </script>

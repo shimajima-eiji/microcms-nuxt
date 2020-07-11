@@ -1,3 +1,4 @@
+/*
 export const state = () => ( {
   ApiFlag: false,  //APIデータ取得を行ったか否か
   article: ''       //APIで取得してきたデータを格納
@@ -16,3 +17,4 @@ export const mutations = {
   // APIで取得してきたデータを格納する
   getFriends ( state, res ) { state.article = res }
 }
+*/
