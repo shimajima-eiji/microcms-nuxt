@@ -4,7 +4,7 @@
       <ul>
         <li class="news__article" v-for="article in articles" :key="article.id">
           <p>{{ modifyDatetime(article.createdAt) }}</p>
-          <h2 class="news__articleTitle">{{ article.title }}</h2>
+          <h2 class="news__articleTitle"><nuxt-link :to="{ name: 'daily-id', params: {id:id} }">{{ article.title }}</nuxt-link></h2>
           <div class="news__articleBody" v-html="article.body"></div>
         </li>
       </ul>

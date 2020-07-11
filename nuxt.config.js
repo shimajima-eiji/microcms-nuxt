@@ -3,6 +3,8 @@ const { ENDPOINT } = process.env;
 const { CONTENTS_ID } = process.env;
 const { API_KEY } = process.env;
 
+import axios from 'axios';
+
 export default {
   /*
   ** Nuxt rendering mode
@@ -72,5 +74,23 @@ export default {
     ENDPOINT,
     CONTENTS_ID,
     API_KEY
+  },
+  generate: {
+    routes ()
+    {
+      return axios.get( ENDPOINT, {
+        headers: { "X-API-KEY": API_KEY }
+      } )
+        .then( ( res ) =>
+        {
+          return res.data.contents.map( ( content ) =>
+          {
+            return {
+              route: '/' + CONTENTS_ID + '/' + content.id,
+              payload: content
+            }
+          } )
+        } )
+    }
   }
 }
